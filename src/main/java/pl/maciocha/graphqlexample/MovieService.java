@@ -15,6 +15,13 @@ public class MovieService{
 
     List<Movie> listOfMovies = new ArrayList<>();
 
+
+    public Movie saveMovie(String name, String author){
+        Movie movie = new Movie((long) (listOfMovies.size() + 1), name, author);
+        listOfMovies.add(movie);
+        return movie;
+    }
+
     public List<Movie> getMovies(int size){
         return listOfMovies.stream().limit(size).collect(Collectors.toList());
     }

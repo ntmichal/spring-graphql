@@ -8,3 +8,7 @@ type Query{
     movies(limit: Int): [Movie]
     author(author: String):[Movie]
 }
+
+type Mutation{
+    createMovie(name: String, author: String): Movie
+}
